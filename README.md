@@ -10,7 +10,7 @@
   - 기본 requestInfo 정보 & 데이터 추가
     * ![image](https://user-images.githubusercontent.com/71567319/130961467-8884ee51-6d93-43a1-932f-c4bd4c509ec9.png) ![image](https://user-images.githubusercontent.com/71567319/130961480-402960a5-1fc0-47c5-bfc2-847c3ce93b02.png)
   - user 데이터 추가
-    * ![image](https://user-images.githubusercontent.com/71567319/130961174-877b4156-24b8-4e51-acb4-1df6afdd0112.png)
+    * ![image](https://user-images.githubusercontent.com/71567319/130961639-fadb8384-4993-4185-a548-64b4f5e668ad.png)
 
 <br>
 
