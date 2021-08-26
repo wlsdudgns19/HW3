@@ -15,6 +15,14 @@
 <br>
 
 3. [20년도 로그인 수 API] 스프링 부트, mybatis, mariadb연동
+  - ㅇ
+  - ㅇ
+  - ㅇ
+  - ㅇ
+
+<br>
+
+5. SW활용 현황 통계 API구축을 위한 SQL작성
   - 연도별 접속자 수
     * ![image](https://user-images.githubusercontent.com/71567319/130962989-5a892f26-0de6-4a93-a4b8-3c460e4ab356.png)
 
