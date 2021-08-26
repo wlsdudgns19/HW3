@@ -15,59 +15,7 @@
 <br>
 
 3. [20년도 로그인 수 API] 스프링 부트, mybatis, mariadb연동
-  - @Controller
-    public class settingTest {
-    
- 
-    @Autowired
-    private StatisticService service;
-    
-    @ResponseBody 
-    @RequestMapping("/login/{year}")
-    public Map<String, Object> loginsqltest(@PathVariable("year") String year) throws Exception{ 
-        
-        return service.yearloginNum(year);
-    }
-    
-    @ResponseBody 
-    @RequestMapping("/login/{year}/{month}")
-    public Map<String, Object> loginsqltest(@PathVariable("year") String year, @PathVariable("month")String month) throws Exception{ 
-        
-        return service.yearmonthloginNum(year, month);
-    }
-    
-    @ResponseBody 
-    @RequestMapping("/login/{year}/{month}/{imsi}")
-    public Map<String, Object> loginsqltest(@PathVariable("year") String year, @PathVariable("month")String month, @PathVariable("imsi")String imsi) throws Exception{
-        
-    	if(imsi.length()==1) //부서입력
-    		return service.organloginNum(year, month, imsi);
-    	else
-    		return service.yearmonthdateloginNum(year, month, imsi);
-        
-    }
-        
-    @ResponseBody 
-    @RequestMapping("/average")
-    public Map<String, Object> averagesqltest() throws Exception{ 
-        
-        return service.avgloginNum();
-    }
-    
- 
-    @RequestMapping("/test") 
-    public ModelAndView test() throws Exception{ 
-        ModelAndView mav = new ModelAndView("test"); 
-        mav.addObject("name", "devfunpj"); 
-        List<String> resultList = new ArrayList<String>(); 
-        resultList.add("!!!HELLO WORLD!!!"); 
-        resultList.add("설정 TEST!!!"); 
-        resultList.add("설정 TEST!!!"); 
-        resultList.add("설정 TEST!!!!!"); 
-        resultList.add("설정 TEST!!!!!!"); 
-        mav.addObject("list", resultList); 
-        return mav; 
-    }
+  - ㅇ
   - ㅇ
   - ㅇ
   - ㅇ
@@ -91,4 +39,4 @@
     * ![image](https://user-images.githubusercontent.com/71567319/130963065-6245473c-4510-44ab-aad6-8a632f9479f4.png)
 
   - 휴일을 제외한 로그인 수 (API구축시 추가 구현 필요, 별도의 db생성 또는 공공API활용)
-    * 4차 과제
+    * 4차 과제에서 
