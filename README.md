@@ -42,8 +42,7 @@
     ```
 
   - statisticMapper.xml
-    <pre>
-    <code>
+    ```
     <select id="selectYearLogin" parameterType="string" resultType="hashMap">
         select count(*) as totCnt
         from statistc.requestinfo ri
@@ -69,12 +68,10 @@
 		from statistc.requestInfo ri, statistc.user
 		where ri.userID = user.userID and left(ri.createDate, 2) = #{year} and mid(ri.createDate, 3, 2) = #{month}  and HR_ORGAN = #{organ};
     </select>
-    </code>
-    </pre>
+    ```
 
   - StatisticServiceImpl.java
-    <pre>
-    <code>
+    ```
     @Autowired
     private StatisticMapper uMapper;
     
@@ -176,12 +173,10 @@
         
         return retVal;
 	}
-    </code>
-    </pre>
+    ```
     
   - settingTest.java
-    <pre>
-    <code>
+    ```
     @Controller
     public class settingTest {
     
@@ -220,8 +215,7 @@
         
         return service.avgloginNum();
     }
-    </code>
-    </pre>
+    ```
     
 ------------
 
