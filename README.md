@@ -7,7 +7,7 @@
 <br>
 
 2. 통계 API(SW활용현황)을 위한 DB, TABLE생성
-
+  - ![image](https://user-images.githubusercontent.com/71567319/130898539-2d67cb80-50b6-4c99-a89d-9180260430f2.png)
 <br>
 
 3. [20년도 로그인 수 API] 스프링 부트, mybatis, mariadb연동
