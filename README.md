@@ -16,41 +16,30 @@
 
 3. [20년도 로그인 수 API] 스프링 부트, mybatis, mariadb연동
   - MybatisConfig.java
-    <pre>
-    <code>
-    package com.devfun.settingweb_boot.config;
- 
-import javax.sql.DataSource;
- 
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.mybatis.spring.SqlSessionFactoryBean;
-import org.mybatis.spring.SqlSessionTemplate;
-import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
- 
-@Configuration
-@MapperScan(basePackages = "com.devfun.settingweb_boot.dao")
-public class MybatisConfig {
+    ```
+     
+	@Configuration
+	@MapperScan(basePackages = "com.devfun.settingweb_boot.dao")
+	public class MybatisConfig {
+   
+		@Bean
+    		public SqlSessionFactory sqlSessionFactory (DataSource dataSource) throws Exception {
+        		SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
+        
+        		sqlSessionFactory.setDataSource(dataSource);
+        		sqlSessionFactory.setTypeAliasesPackage("com.devfun.settingweb_boot.dto");
+        
+        		return sqlSessionFactory.getObject();
+    		}
     
-    @Bean
-    public SqlSessionFactory sqlSessionFactory (DataSource dataSource) throws Exception {
-        SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
+    		@Bean
+    		public SqlSessionTemplate sqlSession (SqlSessionFactory sqlSessionFactory) {
         
-        sqlSessionFactory.setDataSource(dataSource);
-        sqlSessionFactory.setTypeAliasesPackage("com.devfun.settingweb_boot.dto");
-        
-        return sqlSessionFactory.getObject();
-    }
-    
-    @Bean
-    public SqlSessionTemplate sqlSession (SqlSessionFactory sqlSessionFactory) {
-        
-        return new SqlSessionTemplate(sqlSessionFactory);
-    }
-}
-    </code>
-    </pre>
+		        return new SqlSessionTemplate(sqlSessionFactory);
+    		}
+	}
+
+    ```
 
   - statisticMapper.xml
     <pre>
