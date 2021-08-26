@@ -7,7 +7,12 @@
 <br>
 
 2. 통계 API(SW활용현황)을 위한 DB, TABLE생성
-  - ![image](https://user-images.githubusercontent.com/71567319/130899032-f67302bb-cbda-4fa7-a65e-494b851f7d1f.png)
+  - 기본 requestInfo 정보
+    * ![image](https://user-images.githubusercontent.com/71567319/130961043-54be1ab2-9473-4137-825a-ecc26a30ff71.png)
+  - 추가 requestInfo 정보
+    * ![image](https://user-images.githubusercontent.com/71567319/130961061-6aeeab9d-68bc-449b-9d4b-0bb7931a0ba2.png)
+  - user 데이터 추가
+    * ![image](https://user-images.githubusercontent.com/71567319/130961174-877b4156-24b8-4e51-acb4-1df6afdd0112.png)
 
 <br>
 
