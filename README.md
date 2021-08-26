@@ -2,7 +2,7 @@
 
 1. 스프링부트로 개발 환경 설정하기
   - Pom.xml에 부트 버전은 2.5.4로 해주었습니다.
-  - ![image](https://user-images.githubusercontent.com/71567319/130899007-1972c612-9e27-4df5-bb5f-9dce7102a053.png) ![image](https://user-images.githubusercontent.com/71567319/130899011-74884927-cdd3-4cca-a910-58c947ca55c2.png)
+    * ![image](https://user-images.githubusercontent.com/71567319/130899007-1972c612-9e27-4df5-bb5f-9dce7102a053.png) ![image](https://user-images.githubusercontent.com/71567319/130899011-74884927-cdd3-4cca-a910-58c947ca55c2.png)
 
 <br>
 
