@@ -26,6 +26,45 @@
 
   - settingTest.java
     * ![image](https://user-images.githubusercontent.com/71567319/130965884-1120659f-58ab-4439-8e6f-9776f265b1a8.png)
+    * @Controller
+public class settingTest {
+    
+ 
+    @Autowired
+    private StatisticService service;
+    
+    @ResponseBody 
+    @RequestMapping("/login/{year}")
+    public Map<String, Object> loginsqltest(@PathVariable("year") String year) throws Exception{ 
+        
+        return service.yearloginNum(year);
+    }
+    
+    @ResponseBody 
+    @RequestMapping("/login/{year}/{month}")
+    public Map<String, Object> loginsqltest(@PathVariable("year") String year, @PathVariable("month")String month) throws Exception{ 
+        
+        return service.yearmonthloginNum(year, month);
+    }
+    
+    @ResponseBody 
+    @RequestMapping("/login/{year}/{month}/{imsi}")
+    public Map<String, Object> loginsqltest(@PathVariable("year") String year, @PathVariable("month")String month, @PathVariable("imsi")String imsi) throws Exception{
+        
+    	if(imsi.length()==1) //부서입력
+    		return service.organloginNum(year, month, imsi);
+    	else
+    		return service.yearmonthdateloginNum(year, month, imsi);
+        
+    }
+        
+    @ResponseBody 
+    @RequestMapping("/average")
+    public Map<String, Object> averagesqltest() throws Exception{ 
+        
+        return service.avgloginNum();
+    }
+
 
 ------------
 
