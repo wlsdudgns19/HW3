@@ -15,7 +15,59 @@
 <br>
 
 3. [20년도 로그인 수 API] 스프링 부트, mybatis, mariadb연동
-  - ㅇ
+  - @Controller
+    public class settingTest {
+    
+ 
+    @Autowired
+    private StatisticService service;
+    
+    @ResponseBody 
+    @RequestMapping("/login/{year}")
+    public Map<String, Object> loginsqltest(@PathVariable("year") String year) throws Exception{ 
+        
+        return service.yearloginNum(year);
+    }
+    
+    @ResponseBody 
+    @RequestMapping("/login/{year}/{month}")
+    public Map<String, Object> loginsqltest(@PathVariable("year") String year, @PathVariable("month")String month) throws Exception{ 
+        
+        return service.yearmonthloginNum(year, month);
+    }
+    
+    @ResponseBody 
+    @RequestMapping("/login/{year}/{month}/{imsi}")
+    public Map<String, Object> loginsqltest(@PathVariable("year") String year, @PathVariable("month")String month, @PathVariable("imsi")String imsi) throws Exception{
+        
+    	if(imsi.length()==1) //부서입력
+    		return service.organloginNum(year, month, imsi);
+    	else
+    		return service.yearmonthdateloginNum(year, month, imsi);
+        
+    }
+        
+    @ResponseBody 
+    @RequestMapping("/average")
+    public Map<String, Object> averagesqltest() throws Exception{ 
+        
+        return service.avgloginNum();
+    }
+    
+ 
+    @RequestMapping("/test") 
+    public ModelAndView test() throws Exception{ 
+        ModelAndView mav = new ModelAndView("test"); 
+        mav.addObject("name", "devfunpj"); 
+        List<String> resultList = new ArrayList<String>(); 
+        resultList.add("!!!HELLO WORLD!!!"); 
+        resultList.add("설정 TEST!!!"); 
+        resultList.add("설정 TEST!!!"); 
+        resultList.add("설정 TEST!!!!!"); 
+        resultList.add("설정 TEST!!!!!!"); 
+        mav.addObject("list", resultList); 
+        return mav; 
+    }
   - ㅇ
   - ㅇ
   - ㅇ
