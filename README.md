@@ -15,17 +15,182 @@
 ------------
 
 3. [20년도 로그인 수 API] 스프링 부트, mybatis, mariadb연동
-  - MybatusConfig.java
-    * ![image](https://user-images.githubusercontent.com/71567319/130964015-1bd0ccc7-f143-424b-b4f1-0ff55608086f.png)
+  - MybatisConfig.java
+    <pre>
+    <code>
+    package com.devfun.settingweb_boot.config;
+ 
+import javax.sql.DataSource;
+ 
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+ 
+@Configuration
+@MapperScan(basePackages = "com.devfun.settingweb_boot.dao")
+public class MybatisConfig {
+    
+    @Bean
+    public SqlSessionFactory sqlSessionFactory (DataSource dataSource) throws Exception {
+        SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
+        
+        sqlSessionFactory.setDataSource(dataSource);
+        sqlSessionFactory.setTypeAliasesPackage("com.devfun.settingweb_boot.dto");
+        
+        return sqlSessionFactory.getObject();
+    }
+    
+    @Bean
+    public SqlSessionTemplate sqlSession (SqlSessionFactory sqlSessionFactory) {
+        
+        return new SqlSessionTemplate(sqlSessionFactory);
+    }
+}
+    </code>
+    </pre>
 
   - statisticMapper.xml
-    * ![image](https://user-images.githubusercontent.com/71567319/130965202-b3696253-754a-4e16-9987-e007d1d1d126.png)
+    <pre>
+    <code>
+    <select id="selectYearLogin" parameterType="string" resultType="hashMap">
+        select count(*) as totCnt
+        from statistc.requestinfo ri
+        where left(ri.createDate, 2) = #{year};
+    </select>
+    <select id="selectYearMonthLogin" parameterType="string" resultType="hashMap">
+        select count(*) as totCnt
+        from statistc.requestinfo ri
+        where left(ri.createDate, 2) = #{year} and mid(ri.createDate, 3, 2) = #{month};
+    </select>
+    <select id="selectYearMonthDateLogin" parameterType="string" resultType="hashMap">
+        select count(*) as totCnt
+        from statistc.requestinfo ri
+        where left(ri.createDate, 2) = #{year} and mid(ri.createDate, 3, 2) = #{month} and mid(ri.createDate, 5, 2) = #{date};
+    </select>
+    <select id="selectAvgLogin" parameterType="string" resultType="hashMap">
+        select count(*) / (select count(distinct(substring(ri.createDate, 1, 6))) from statistc.requestInfo ri) as average
+		from statistc.requestInfo;
+    </select>
+    
+     <select id="selectOrganLogin" parameterType="string" resultType="hashMap">
+        select count(*) as totCnt 
+		from statistc.requestInfo ri, statistc.user
+		where ri.userID = user.userID and left(ri.createDate, 2) = #{year} and mid(ri.createDate, 3, 2) = #{month}  and HR_ORGAN = #{organ};
+    </select>
+    </code>
+    </pre>
 
   - StatisticServiceImpl.java
-    * ![image](https://user-images.githubusercontent.com/71567319/130964792-887f0902-c413-40f2-933a-c95981217f9e.png) ![image](https://user-images.githubusercontent.com/71567319/130965604-ea59cb0e-bb85-441b-9f7a-82844c9fc768.png) ![image](https://user-images.githubusercontent.com/71567319/130964814-7e571deb-c08b-4c69-b503-0892f4b6d47d.png)
-
+    <pre>
+    <code>
+    @Autowired
+    private StatisticMapper uMapper;
+    
+    @Override
+    public HashMap<String, Object> yearloginNum (String year) {
+        // TODO Auto-generated method stub
+        HashMap<String, Object> retVal = new HashMap<String,Object>();
+        
+        try {
+            retVal = uMapper.selectYearLogin(year);
+            retVal.put("year", year);
+            retVal.put("is_success", true);
+            
+        }catch(Exception e) {
+            retVal.put("totCnt", -999);
+            retVal.put("year", year);
+            retVal.put("is_success", false);
+        }
+        
+        return retVal;
+    }
+    
+    @Override
+	public HashMap<String, Object> yearmonthloginNum(String year, String month) {
+		HashMap<String, Object> retVal = new HashMap<String,Object>();
+        
+		try {
+            retVal = uMapper.selectYearMonthLogin(year, month);
+            retVal.put("year", year);
+            retVal.put("month", month);
+            retVal.put("is_success", true);
+            
+        }catch(Exception e) {
+            retVal.put("totCnt", -999);
+            retVal.put("year", year);
+            retVal.put("month", month);
+            retVal.put("is_success", false);
+        }
+        
+        return retVal;
+	}
+    
+    @Override
+	public HashMap<String, Object> yearmonthdateloginNum(String year, String month, String date) {
+		HashMap<String, Object> retVal = new HashMap<String,Object>();
+        
+		try {
+            retVal = uMapper.selectYearMonthDateLogin(year, month, date);
+            retVal.put("year", year);
+            retVal.put("month", month);
+            retVal.put("date", date);
+            retVal.put("is_success", true);
+            
+        }catch(Exception e) {
+            retVal.put("totCnt", -999);
+            retVal.put("year", year);
+            retVal.put("month", month);
+            retVal.put("date", date);
+            retVal.put("is_success", false);
+        }
+        
+        return retVal;
+	}
+    
+    @Override
+	public HashMap<String, Object> avgloginNum() {
+		HashMap<String, Object> retVal = new HashMap<String,Object>();
+        
+        try {
+            retVal = uMapper.selectAvgLogin();
+            retVal.put("is_success", true);
+            
+        }catch(Exception e) {
+            retVal.put("totCnt", -999);
+            retVal.put("is_success", false);
+        }
+        
+        return retVal;
+	}
+    
+    @Override
+	public HashMap<String, Object> organloginNum(String year, String month, String organ) {
+		HashMap<String, Object> retVal = new HashMap<String,Object>();
+        
+		try {
+            retVal = uMapper.selectOrganLogin(year, month, organ);
+            retVal.put("year", year);
+            retVal.put("month", month);
+            retVal.put("organ", organ);
+            retVal.put("is_success", true);
+            
+        }catch(Exception e) {
+            retVal.put("totCnt", -999);
+            retVal.put("year", year);
+            retVal.put("month", month);
+            retVal.put("organ", organ);
+            retVal.put("is_success", false);
+        }
+        
+        return retVal;
+	}
+    </code>
+    </pre>
+    
   - settingTest.java
-    * ![image](https://user-images.githubusercontent.com/71567319/130965884-1120659f-58ab-4439-8e6f-9776f265b1a8.png)
     <pre>
     <code>
     @Controller
