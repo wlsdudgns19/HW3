@@ -4,7 +4,7 @@
   - Pom.xml에 부트 버전은 2.5.4로 해주었습니다.
     * ![image](https://user-images.githubusercontent.com/71567319/130899007-1972c612-9e27-4df5-bb5f-9dce7102a053.png) ![image](https://user-images.githubusercontent.com/71567319/130899011-74884927-cdd3-4cca-a910-58c947ca55c2.png)
 
-<br>
+------------
 
 2. 통계 API(SW활용현황)을 위한 DB, TABLE생성
   - 기본 requestInfo 정보 & 데이터 추가
@@ -12,7 +12,7 @@
   - user 데이터 추가
     * ![image](https://user-images.githubusercontent.com/71567319/130961639-fadb8384-4993-4185-a548-64b4f5e668ad.png)
 
-<br>
+------------
 
 3. [20년도 로그인 수 API] 스프링 부트, mybatis, mariadb연동
   - ㅇ
@@ -20,9 +20,9 @@
   - ㅇ
   - ㅇ
 
-<br>
+------------
 
-5. SW활용 현황 통계 API구축을 위한 SQL작성
+4. SW활용 현황 통계 API구축을 위한 SQL작성
   - 연도별 접속자 수
     * ![image](https://user-images.githubusercontent.com/71567319/130962989-5a892f26-0de6-4a93-a4b8-3c460e4ab356.png)
 
