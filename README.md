@@ -22,7 +22,7 @@
     * ![image](https://user-images.githubusercontent.com/71567319/130965202-b3696253-754a-4e16-9987-e007d1d1d126.png)
 
   - StatisticServiceImpl.java
-    * ![image](https://user-images.githubusercontent.com/71567319/130964792-887f0902-c413-40f2-933a-c95981217f9e.png) ![image](https://user-images.githubusercontent.com/71567319/130964801-a5a317ac-69aa-4c07-beec-e0d0d218adc3.png) ![image](https://user-images.githubusercontent.com/71567319/130964814-7e571deb-c08b-4c69-b503-0892f4b6d47d.png)
+    * ![image](https://user-images.githubusercontent.com/71567319/130964792-887f0902-c413-40f2-933a-c95981217f9e.png) ![image](https://user-images.githubusercontent.com/71567319/130965436-02d169b2-23de-4adf-8b7b-3ecd4b9bbdf9.png) ![image](https://user-images.githubusercontent.com/71567319/130964814-7e571deb-c08b-4c69-b503-0892f4b6d47d.png)
 
   - settingTest.java
     * ![image](https://user-images.githubusercontent.com/71567319/130964898-052a43ef-1427-4bef-8e42-0dd818750315.png)
