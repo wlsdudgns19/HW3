@@ -25,7 +25,7 @@
     * ![image](https://user-images.githubusercontent.com/71567319/130964792-887f0902-c413-40f2-933a-c95981217f9e.png) ![image](https://user-images.githubusercontent.com/71567319/130965604-ea59cb0e-bb85-441b-9f7a-82844c9fc768.png) ![image](https://user-images.githubusercontent.com/71567319/130964814-7e571deb-c08b-4c69-b503-0892f4b6d47d.png)
 
   - settingTest.java
-    * ![image](https://user-images.githubusercontent.com/71567319/130964898-052a43ef-1427-4bef-8e42-0dd818750315.png)
+    * ![image](https://user-images.githubusercontent.com/71567319/130965733-5199b821-6f19-45a8-82ae-c76483a8fa9c.png)
 
 ------------
 
