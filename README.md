@@ -39,4 +39,4 @@
     * ![image](https://user-images.githubusercontent.com/71567319/130963065-6245473c-4510-44ab-aad6-8a632f9479f4.png)
 
   - 휴일을 제외한 로그인 수 (API구축시 추가 구현 필요, 별도의 db생성 또는 공공API활용)
-    * 4차 과제에서 
+    * 4차 과제에서 진행
