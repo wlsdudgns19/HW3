@@ -26,7 +26,8 @@
 
   - settingTest.java
     * ![image](https://user-images.githubusercontent.com/71567319/130965884-1120659f-58ab-4439-8e6f-9776f265b1a8.png)
-    '''
+    <pre>
+    <code>
     @Controller
     public class settingTest {
     
@@ -65,7 +66,9 @@
         
         return service.avgloginNum();
     }
-    '''
+    </code>
+    </pre>
+    
 ------------
 
 4. SW활용 현황 통계 API구축을 위한 SQL작성
