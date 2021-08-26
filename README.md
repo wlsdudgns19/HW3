@@ -19,7 +19,7 @@
     * ![image](https://user-images.githubusercontent.com/71567319/130964015-1bd0ccc7-f143-424b-b4f1-0ff55608086f.png)
 
   - statisticMapper.xml
-    * ![image](https://user-images.githubusercontent.com/71567319/130964191-f9695c1f-3f13-4814-b6aa-dbf9bd26876a.png)
+    * ![image](https://user-images.githubusercontent.com/71567319/130965202-b3696253-754a-4e16-9987-e007d1d1d126.png)
 
   - StatisticServiceImpl.java
     * ![image](https://user-images.githubusercontent.com/71567319/130964792-887f0902-c413-40f2-933a-c95981217f9e.png) ![image](https://user-images.githubusercontent.com/71567319/130964801-a5a317ac-69aa-4c07-beec-e0d0d218adc3.png) ![image](https://user-images.githubusercontent.com/71567319/130964814-7e571deb-c08b-4c69-b503-0892f4b6d47d.png)
